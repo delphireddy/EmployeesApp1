@@ -1,0 +1,33 @@
+<%= form_for(@deptmanager) do |f| %>
+  <% if @deptmanager.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@deptmanager.errors.count, "error") %> prohibited this deptmanager from being saved:</h2>
+
+      <ul>
+      <% @deptmanager.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :dept_no %><br>
+    <%= f.text_field :dept_no %>
+  </div>
+  <div class="field">
+    <%= f.label :emp_no %><br>
+    <%= f.text_field :emp_no %>
+  </div>
+  <div class="field">
+    <%= f.label :from_date %><br>
+    <%= f.date_select :from_date %>
+  </div>
+  <div class="field">
+    <%= f.label :to_date %><br>
+    <%= f.date_select :to_date %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

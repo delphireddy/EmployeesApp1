@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Deptmanagers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Dept no</th>
+      <th>Emp no</th>
+      <th>From date</th>
+      <th>To date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @deptmanagers.each do |deptmanager| %>
+      <tr>
+        <td><%= deptmanager.dept_no %></td>
+        <td><%= deptmanager.emp_no %></td>
+        <td><%= deptmanager.from_date %></td>
+        <td><%= deptmanager.to_date %></td>
+        <td><%= link_to 'Show', deptmanager %></td>
+        <td><%= link_to 'Edit', edit_deptmanager_path(deptmanager) %></td>
+        <td><%= link_to 'Destroy', deptmanager, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Deptmanager', new_deptmanager_path %>

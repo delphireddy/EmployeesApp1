@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Emp no:</strong>
+  <%= @title.emp_no %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @title.title %>
+</p>
+
+<p>
+  <strong>From date:</strong>
+  <%= @title.from_date %>
+</p>
+
+<p>
+  <strong>To date:</strong>
+  <%= @title.to_date %>
+</p>
+
+<%= link_to 'Edit', edit_title_path(@title) %> |
+<%= link_to 'Back', titles_path %>

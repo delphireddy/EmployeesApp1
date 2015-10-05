@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Deptemps</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Emp no</th>
+      <th>Dept no</th>
+      <th>From date</th>
+      <th>To date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @deptemps.each do |deptemp| %>
+      <tr>
+        <td><%= deptemp.emp_no %></td>
+        <td><%= deptemp.dept_no %></td>
+        <td><%= deptemp.from_date %></td>
+        <td><%= deptemp.to_date %></td>
+        <td><%= link_to 'Show', deptemp %></td>
+        <td><%= link_to 'Edit', edit_deptemp_path(deptemp) %></td>
+        <td><%= link_to 'Destroy', deptemp, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Deptemp', new_deptemp_path %>
