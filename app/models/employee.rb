@@ -6,8 +6,8 @@ class Employee < ActiveRecord::Base
   has_many :salaries
   has_many :titles
     
-  has_many :dep_emps
-  has_many :departments, through: :dep_emps
+  has_many :dept_emps
+  has_many :departments, through: :dept_emps
   
   has_many :dept_managers
   has_many :departments, through: :dept_managers  

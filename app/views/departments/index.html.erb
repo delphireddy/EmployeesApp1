@@ -7,6 +7,7 @@
     <tr>
       <th>Dept no</th>
       <th>Dept name</th>
+	  <th>Employees Count</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,13 +17,17 @@
       <tr>
         <td><%= department.dept_no %></td>
         <td><%= department.dept_name %></td>
+		<% dept = department.dept_no %>
+	    <td><%= link_to Deptemp.where("dept_no = ?", dept).count, emp_url(id: department.dept_no) %>
         <td><%= link_to 'Show', department %></td>
         <td><%= link_to 'Edit', edit_department_path(department) %></td>
         <td><%= link_to 'Destroy', department, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
-</table>
+</table
+
+
 
 <br>
 

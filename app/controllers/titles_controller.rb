@@ -4,7 +4,9 @@ class TitlesController < ApplicationController
   # GET /titles
   # GET /titles.json
   def index
-    @titles = Title.all
+    #@titles = Title.all
+	#@titles = Title.where("title = ?",'Manager')
+	@titles = Title.distinct(:title)
   end
 
   # GET /titles/1

@@ -4,7 +4,8 @@ class SalariesController < ApplicationController
   # GET /salaries
   # GET /salaries.json
   def index
-    @salaries = Salarie.all
+	@salaries = Salarie.all
+    #@salaries = Salarie.find(['21763'])
   end
 
   # GET /salaries/1

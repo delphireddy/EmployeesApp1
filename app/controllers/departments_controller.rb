@@ -5,13 +5,21 @@ class DepartmentsController < ApplicationController
   # GET /departments.json
   def index
     @departments = Department.all
+	#@departments = Department.find([:d001, :d003, :d007])
+	
   end
 
   # GET /departments/1
   # GET /departments/1.json
   def show
+    
   end
-
+  
+  def getemp
+    ## we will have dept id here
+	@depts = Deptemp.where("dept_no = ?", params[:emp_no])
+  end
+  
   # GET /departments/new
   def new
     @department = Department.new

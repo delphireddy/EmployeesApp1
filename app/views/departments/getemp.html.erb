@@ -1,0 +1,20 @@
+<h1>Listing Employees of each Department</h1>
+
+<table>
+  <thead>
+    <tr>
+	  <th>id</th>
+      <th>NAME</th>
+      
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @depts.each do |dept| %>
+      <tr>
+	    <td><%= dept.emp_no %></td>
+        <td><%= Employee.where("emp_no = ?", dept.emp_no).first_name %> <td>       
+      </tr>
+    <% end %>
+  </tbody>
+</table>
