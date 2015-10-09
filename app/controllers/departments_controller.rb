@@ -17,7 +17,10 @@ class DepartmentsController < ApplicationController
   
   def getemp
     ## we will have dept id here
-	@depts = Deptemp.where("dept_no = ?", params[:emp_no])
+	@depts = Deptemp.where("dept_no = ?", params[:id])
+	#deptmanager = Deptmanager.where("dept_no = ?", params[:id])
+	employee = Deptmanager.find_by_dept_no(params[:id]).emp_no
+	@employee_id = Employee.find_by_emp_no(employee)
   end
   
   # GET /departments/new

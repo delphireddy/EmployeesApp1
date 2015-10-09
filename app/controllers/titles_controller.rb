@@ -6,9 +6,19 @@ class TitlesController < ApplicationController
   def index
     #@titles = Title.all
 	#@titles = Title.where("title = ?",'Manager')
-	@titles = Title.distinct(:title)
+	#@titles = Title.distinct('title')
+	#@titles = Title.select(:title)
+	@titles = Title.select(:title).uniq
   end
 
+  def gettitleemp
+    ## we will have dept id here
+	@depts = Deptemp.where("dept_no = ?", params[:id])
+	#deptmanager = Deptmanager.where("dept_no = ?", params[:id])
+	employee = Deptmanager.find_by_dept_no(params[:id]).emp_no
+	@employee_id = Employee.find_by_emp_no(employee)
+  end
+  
   # GET /titles/1
   # GET /titles/1.json
   def show
