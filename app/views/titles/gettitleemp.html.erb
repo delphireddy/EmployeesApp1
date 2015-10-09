@@ -1,27 +1,28 @@
-<h1>Listing Employees of each Title</h1>
-<h3> Department Manager</h3>
-<%= @employee_id.first_name%> <%= @employee_id.last_name%>
+<h1>Listing Employees under Each title</h1>
 
-<br> 
-<br>
+<h3> Title </h3>
+<%= @titname.title %>
+
+<br> <br>
 
 <table>
   <thead>
     <tr>
-	  <th>Emp No</th>
+	  <th>Emp_no</th>
 	  <th>First Name</th>
       <th>Last Name</th>
-	  <th>Salary</th>      
+	  <th>Salary</th>
+      
     </tr>
-</thead>
+ </thead>
 
   <tbody>
-    <% @depts.each do |dept| %>
+    <% @titemp.each do |titl| %>
       <tr>
-	    <td><%= dept.emp_no %></td>
-        <td><%= Employee.find_by_emp_no(dept.emp_no).first_name %></td>   
-	    <td><%= Employee.find_by_emp_no(dept.emp_no).last_name %></td>
-		<td><%= Salarie.find_by_emp_no(dept.emp_no).salary %></td>
+	    <td><%= titl.emp_no %></td>
+        <td><%= Employee.find_by_emp_no(titl.emp_no).first_name %></td>   
+	    <td><%= Employee.find_by_emp_no(titl.emp_no).last_name %></td>
+		<td><%= Salarie.find_by_emp_no(titl.emp_no).salary %></td>
       </tr>
     <% end %>
 	

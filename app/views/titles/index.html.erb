@@ -17,9 +17,8 @@
       <tr>
         
         <td><%= title.title %></td>
-		<td><%= link_to Title.where(title: title.title).count, titemp_url(id: ) %></td>
-    link_to empcount, emp_url(id: department.dept_no)		
-       
+		<td><%= link_to Title.where(title: title.title).count, titemp_url(id: title.title) %></td>
+ 
       </tr>
     <% end %>
   </tbody>

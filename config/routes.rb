@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   
   get 'emp/:id/getemp' => 'departments#getemp', as: :emp
   
-  get 'emp/:id/gettitleemp' => 'titles#gettitleemp', as: :titemp
+  get 'titles/:id/gettitleemp' => 'titles#gettitleemp', as: :titemp
   
   #get 'home' => 'home#show'
   # The priority is based upon order of creation: first created -> highest priority.

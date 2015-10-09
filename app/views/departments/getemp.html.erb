@@ -2,8 +2,7 @@
 <h3> Department Manager</h3>
 <%= @employee_id.first_name%> <%= @employee_id.last_name%>
 
-<br> 
-<br>
+<br> <br>
 
 <table>
   <thead>
@@ -11,9 +10,10 @@
 	  <th>Emp No</th>
 	  <th>First Name</th>
       <th>Last Name</th>
-	  <th>Salary</th>      
+	  <th>Salary</th>
+      
     </tr>
-</thead>
+ </thead>
 
   <tbody>
     <% @depts.each do |dept| %>
